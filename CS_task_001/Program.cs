@@ -29,14 +29,13 @@ int EvenNum (int[] collection)
 {
     int count = collection.Length;
     int index = 0;
-    int absent = 0;
-    // string absent = "в массиве не найдено четных чисел";
+    int quantity = 0;
 
     while (index < count)
     {
         if (collection[index] % 2 == 0)
         {
-            Console.WriteLine(collection[index]);
+            quantity++;
             index++;
         }
         else
@@ -44,7 +43,7 @@ int EvenNum (int[] collection)
             index++;
         }
     }
-    return index;
+    return quantity;
 }
 
 int[] array = new int[4];
@@ -53,5 +52,6 @@ FirstArray(array);
 PrintArray(array);
 Console.WriteLine();
 
-Console.WriteLine("Четные числа из массиве: ");
-EvenNum(array);
+int result = EvenNum(array);
+Console.Write("Количество четных чисел в массиве равняется: ");
+Console.Write(result);
